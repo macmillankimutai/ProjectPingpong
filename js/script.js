@@ -1,24 +1,31 @@
-$(document).ready(function() {
-  $("form#ping").submit(function(event) {
-  event.preventDefault();
-  var ping = parseInt($("input#ping").val());
-  var result = ping(ping);
-  $("#result").text();
- });
-});
-
- for (var x=1; x <= 100; x++){
-   if(x % 3 && x % 5) {
-     document.write(x);
-   } else {
-     if( x % 3 == 0 ) {
-        document.write("ping");
-      }
-      if( x % 5 == 0) {
-        document.write("pong");
-      }
+function ping(num){
+  var result = [];
+  for (var index=1; index <= num; index+=1) {
+  if (index % 3 === 0 && index % 5 === 0 ) {
+    result.push("pingpong");
+  }else if (index % 3 == 0 ) {
+      result.push("ping");
     }
-    document.write('<br>');
+    else if (index % 5 == 0 ) {
+      result.push("pong");
   }
+  else {
+    result.push(index);
+  }
+}
+  return result
 
-console.log(ping(x));
+}
+
+
+$(document).ready(function(){
+   $("form#ping").submit(function(){
+      event.preventDefault();
+      $("#result").empty();
+      var num = parseInt($("input#numbers").val());
+      var result=ping(num);
+       result.forEach(function(i){
+         $("#result").append('<li>' + i + "</li>");
+      });
+   });
+});
