@@ -1,0 +1,26 @@
+#header{
+  text-align: center;
+  background-color: blue;
+}
+.one{
+  color: darkred;
+  font-size: 18px;
+}
+.two{
+  color: skyblue;
+}
+#part1{
+  background-color: ;
+  height: 100%;
+}
+#part2{
+  background-color: white;
+  height: 100%;
+}
+#head{
+  font-weight: bold;
+  font-size: 18px;
+}
+.row{
+  background-color: grey;
+}
